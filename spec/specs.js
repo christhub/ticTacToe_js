@@ -43,3 +43,17 @@ describe('Board', function() {
     expect(foundSpace.y).to.eql(space.y);
   });
 });
+
+describe('Game', function() {
+
+  it('creates players, spaces, and board', function() {
+    var game = new Game();
+    expect(game.playerX.mark).to.eq('X');
+    expect(game.board.spaces[0].x).to.eq(1);
+    expect(game.board.spaces[0].y).to.eq(1);
+  });
+  it('should start with playerX as first player and toggle players', function() {
+    var game = new Game();
+    expect(game.whoTurn()).to.eq(game.playerX);
+  });
+});

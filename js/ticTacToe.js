@@ -41,8 +41,32 @@ function Game() {
   var playerX = new Player('X');
   var playerO = new Player('O');
   var board = new Board();
+  var turn = 1;
+  var whoTurn = function() {
+    if (turn === 1 ) {
+      return playerX;
+    }
+    else {
+      return playerO;
+    }
+  };
+  var turnToggle = function() {
+    turn *= -1
+  };
 
   return { playerX  : playerX,
             playerO : playerO,
-            board   : board }
+            board   : board,
+            whoTurn : whoTurn,
+            turnToggle : turnToggle }
 }
+
+
+$(document).ready(function() {
+  var game = new Game();
+  $('#one-one').click(function() {
+    game.board.spaces[0].markedBy(game.playerX);
+    player = game.board.spaces[0].markedBy();
+    alert(player.mark);
+  });
+});
