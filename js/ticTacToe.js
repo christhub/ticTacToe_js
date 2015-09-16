@@ -59,11 +59,13 @@ function Game() {
   var winning = function() {
     var center = board.find(2, 2).markedBy().mark;
     if ((board.find(1, 1).markedBy().mark == center) && (board.find(3, 3).markedBy().mark == center) && (typeof center != 'undefined')){
-      alert(center);
+
     } else if ((board.find(1, 3).markedBy().mark == center) && (board.find(3, 1).markedBy().mark == center) && (typeof center != 'undefined')) {
       $('.turn').hide();
       $('.player').text(center);
       $('.win').text(" wins");
+      $('#new').show();
+
       for (var i = 0; i < board.spaces.length; i++){
         board.spaces[i].clicked = true;
       }
@@ -79,6 +81,7 @@ function Game() {
           $('.turn').hide();
           $('.player').text(marksY[0]);
           $('.win').text(" wins");
+          $('#new').show();
           for (var i = 0; i < board.spaces.length; i++){
             board.spaces[i].clicked = true;
           }
@@ -88,6 +91,7 @@ function Game() {
           $('.turn').hide();
           $('.player').text(marksX[0]);
           $('.win').text(" wins");
+          $('#new').show();
           for (var i = 0; i < board.spaces.length; i++){
             board.spaces[i].clicked = true;
           }
@@ -109,8 +113,15 @@ function Game() {
 
 
 $(document).ready(function() {
+  $('#new').hide();
   var game = new Game();
+
   $('.player').text(game.whoTurn().mark);
+
+  $('#new').click(function() {
+    game = new Game();
+    location.reload();
+  });
 
   $('#one-one').click(function() {
 
