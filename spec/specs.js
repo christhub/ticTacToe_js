@@ -55,5 +55,7 @@ describe('Game', function() {
   it('should start with playerX as first player and toggle players', function() {
     var game = new Game();
     expect(game.whoTurn()).to.eq(game.playerX);
+    game.turnToggle()
+    expect(game.whoTurn()).to.eq(game.playerO);
   });
 });
