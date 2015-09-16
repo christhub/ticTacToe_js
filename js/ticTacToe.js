@@ -61,7 +61,12 @@ function Game() {
     if ((board.find(1, 1).markedBy().mark == center) && (board.find(3, 3).markedBy().mark == center) && (typeof center != 'undefined')){
       alert(center);
     } else if ((board.find(1, 3).markedBy().mark == center) && (board.find(3, 1).markedBy().mark == center) && (typeof center != 'undefined')) {
-      alert('winning');
+      $('.turn').hide();
+      $('.player').text(center);
+      $('.win').text(" wins");
+      for (var i = 0; i < board.spaces.length; i++){
+        board.spaces[i].clicked = true;
+      }
     }
 
 
@@ -71,13 +76,22 @@ function Game() {
       for(var j= 1; j<4; j++) {
         marksY.push(board.find(i, j).markedBy().mark);
         if ((marksY[0] == marksY[1]) && (marksY[0] == marksY[2]) && (typeof marksY[0] != 'undefined')) {
-          alert('hi');
+          $('.turn').hide();
+          $('.player').text(marksY[0]);
+          $('.win').text(" wins");
+          for (var i = 0; i < board.spaces.length; i++){
+            board.spaces[i].clicked = true;
+          }
         }
         marksX.push(board.find(j, i).markedBy().mark);
         if ((marksX[0] == marksX[1]) && (marksX[0] == marksX[2]) && (typeof marksX[0] != 'undefined')) {
-          alert('hey');
+          $('.turn').hide();
+          $('.player').text(marksX[0]);
+          $('.win').text(" wins");
+          for (var i = 0; i < board.spaces.length; i++){
+            board.spaces[i].clicked = true;
+          }
         }
-        console.log(marksX[0] + " " + marksX[1] + " " + marksX[2]);
       }
 
 
