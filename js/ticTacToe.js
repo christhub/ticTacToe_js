@@ -59,7 +59,10 @@ function Game() {
   var winning = function() {
     var center = board.find(2, 2).markedBy().mark;
     if ((board.find(1, 1).markedBy().mark == center) && (board.find(3, 3).markedBy().mark == center) && (typeof center != 'undefined')){
-
+      $('.turn').hide();
+      $('.player').text(center);
+      $('.win').text(" wins");
+      $('#new').show();
     } else if ((board.find(1, 3).markedBy().mark == center) && (board.find(3, 1).markedBy().mark == center) && (typeof center != 'undefined')) {
       $('.turn').hide();
       $('.player').text(center);
@@ -72,7 +75,7 @@ function Game() {
     }
 
 
-    for (var i = 1; i<4; i++) {
+    for (var i = 1; i < 4; i++) {
       var marksY = [];
       var marksX = [];
       for(var j= 1; j<4; j++) {
@@ -86,6 +89,7 @@ function Game() {
             board.spaces[i].clicked = true;
           }
         }
+
         marksX.push(board.find(j, i).markedBy().mark);
         if ((marksX[0] == marksX[1]) && (marksX[0] == marksX[2]) && (typeof marksX[0] != 'undefined')) {
           $('.turn').hide();
@@ -97,18 +101,15 @@ function Game() {
           }
         }
       }
-
-
     }
-
   };
 
-  return { playerX  : playerX,
-            playerO : playerO,
-            board   : board,
-            whoTurn : whoTurn,
-            turnToggle : turnToggle,
-            winning : winning }
+  return { playerX : playerX,
+           playerO : playerO,
+           board : board,
+           whoTurn : whoTurn,
+           turnToggle : turnToggle,
+           winning : winning }
 }
 
 
@@ -129,8 +130,7 @@ $(document).ready(function() {
       var player = game.board.find(1, 1).markedBy(game.whoTurn());
       if (player.mark === "X") {
         $(this).append("<i class='fa fa-times fa-5x'></i>");
-      }
-      else {
+      } else {
         $(this).append("<i class='fa fa-circle-o fa-5x'></i>");
       }
 
@@ -147,8 +147,7 @@ $(document).ready(function() {
       var player = game.board.find(1, 2).markedBy(game.whoTurn());
       if (player.mark === "X") {
         $(this).append("<i class='fa fa-times fa-5x'></i>");
-      }
-      else {
+      } else {
         $(this).append("<i class='fa fa-circle-o fa-5x'></i>");
       }
 
@@ -165,8 +164,7 @@ $(document).ready(function() {
       var player = game.board.find(1, 3).markedBy(game.whoTurn());
       if (player.mark === "X") {
         $(this).append("<i class='fa fa-times fa-5x'></i>");
-      }
-      else {
+      } else {
         $(this).append("<i class='fa fa-circle-o fa-5x'></i>");
       }
 
@@ -183,8 +181,7 @@ $(document).ready(function() {
       var player = game.board.find(2, 1).markedBy(game.whoTurn());
       if (player.mark === "X") {
         $(this).append("<i class='fa fa-times fa-5x'></i>");
-      }
-      else {
+      } else {
         $(this).append("<i class='fa fa-circle-o fa-5x'></i>");
       }
 
@@ -201,8 +198,7 @@ $(document).ready(function() {
       var player = game.board.find(2, 2).markedBy(game.whoTurn());
       if (player.mark === "X") {
         $(this).append("<i class='fa fa-times fa-5x'></i>");
-      }
-      else {
+      } else {
         $(this).append("<i class='fa fa-circle-o fa-5x'></i>");
       }
 
@@ -219,8 +215,7 @@ $(document).ready(function() {
       var player = game.board.find(2, 3).markedBy(game.whoTurn());
       if (player.mark === "X") {
         $(this).append("<i class='fa fa-times fa-5x'></i>");
-      }
-      else {
+      } else {
         $(this).append("<i class='fa fa-circle-o fa-5x'></i>");
       }
 
@@ -237,8 +232,7 @@ $(document).ready(function() {
       var player = game.board.find(3, 1).markedBy(game.whoTurn());
       if (player.mark === "X") {
         $(this).append("<i class='fa fa-times fa-5x'></i>");
-      }
-      else {
+      } else {
         $(this).append("<i class='fa fa-circle-o fa-5x'></i>");
       }
 
@@ -255,8 +249,7 @@ $(document).ready(function() {
       var player = game.board.find(3, 2).markedBy(game.whoTurn());
       if (player.mark === "X") {
         $(this).append("<i class='fa fa-times fa-5x'></i>");
-      }
-      else {
+      } else {
         $(this).append("<i class='fa fa-circle-o fa-5x'></i>");
       }
 
@@ -273,8 +266,7 @@ $(document).ready(function() {
       var player = game.board.find(3, 3).markedBy(game.whoTurn());
       if (player.mark === "X") {
         $(this).append("<i class='fa fa-times fa-5x'></i>");
-      }
-      else {
+      } else {
         $(this).append("<i class='fa fa-circle-o fa-5x'></i>");
       }
 

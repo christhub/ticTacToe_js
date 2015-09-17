@@ -1,8 +1,40 @@
 .cell {
-
-  background-color: red;
+  background-color: #AAF0D1;
   width: 6em;
   height: 5em;
   margin: .5em;
+}
 
+.box {
+  background-color:#F88379;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+body {
+  background-color: #F88379;
+}
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  display: block;
+}
+
+h1, h3, .btn {
+  text-align: center;
+}
+
+.col-lg-4 {
+  min-height: 300px;
+}
+
+.btn-success {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    padding: 0;
+    display: block;
 }

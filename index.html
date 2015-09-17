@@ -10,52 +10,38 @@
     <title>Tic Tac Toe</title>
   </head>
   <body>
-    <div class="col-xs-12 container">
+    <div class="container">
+
       <h1>Tic Tac Toe</h1>
       <h3>Player: <b><span class='player'></span></b><span class='turn'>'s turn</span><span class='win'></span></h3>
-      <h4 id='new' class='btn btn-success'>New game</h4>
-      <div class='row well'>
-      <div class='row'>
-        <div class='col-xs-4 cell' id='one-three'>
 
+
+    <div class="row box">
+      <div class="col-xs-4"></div>
+      <div class='centered col-xs-4'>
+        <div class='row'>
+          <div class='col-xs-4 cell' id='one-three'></div>
+          <div class='col-xs-4 cell' id='two-three'></div>
+          <div class='col-xs-4 cell' id='three-three'></div>
         </div>
 
-        <div class='col-xs-4 cell' id='two-three'>
-
+        <div class='row'>
+          <div class='col-xs-4 cell' id='one-two'></div>
+          <div class='col-xs-4 cell' id='two-two'></div>
+          <div class='col-xs-4 cell' id='three-two'></div>
         </div>
 
-        <div class='col-xs-4 cell' id='three-three'>
-
-        </div>
-      </div>
-      <div class='row'>
-        <div class='col-xs-4 cell' id='one-two'>
-
-        </div>
-
-        <div class='col-xs-4 cell' id='two-two'>
-
-        </div>
-
-        <div class='col-xs-4 cell' id='three-two'>
-
-
+        <div class='row'>
+          <div class='col-xs-4 cell' id='one-one'></div>
+          <div class='col-xs-4 cell' id='two-one'></div>
+          <div class='col-xs-4 cell' id='three-one'></div>
         </div>
       </div>
-      <div class='row'>
-        <div class='col-xs-4 cell' id='one-one'>
-
-        </div>
-
-        <div class='col-xs-4 cell' id='two-one'>
-
-        </div>
-
-        <div class='col-xs-4 cell' id='three-one'>
-
-        </div>
-      </div>
+      <div class="col-xs-4"></div>
     </div>
   </div>
+
+    <button id='new' class='btn btn-success'>New Game</button>
+
   </body>
 </html>
